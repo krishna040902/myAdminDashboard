@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import UsersPage from './pages/UserPage';
 import RolesPage from './pages/RolesPage';
 import PermissionsPage from './pages/PermissionsPage';
@@ -57,11 +57,11 @@ function App() {
 
         <main>
           {/* Routes for different pages */}
-          <Switch>
-            <Route path="/users" component={UsersPage} />
-            <Route path="/roles" component={RolesPage} />
-            <Route path="/permissions" component={PermissionsPage} />
-          </Switch>
+          <Routes>
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/roles" element={<RolesPage />} />
+            <Route path="/permissions" element={<PermissionsPage />} />
+          </Routes>
         </main>
 
         {/* Toast Notification Component */}
@@ -77,5 +77,3 @@ function App() {
 }
 
 export default App;
-
-
